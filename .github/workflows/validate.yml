@@ -1,0 +1,23 @@
+name: JSON Validation
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  validate_json:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Validate JSON files
+        run: |
+          # Replace 'your-validation-script.sh' with the actual validation script
+          chmod +x .github/scripts/your-validation-script.sh
+          ./.github/scripts/your-validation-script.sh
